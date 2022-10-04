@@ -1,5 +1,5 @@
-let humedad = 0
 let temperatura = 0
+let humedad = 0
 let errorMsj = "Error"
 let basicPause = 3000
 let configTries = 10
