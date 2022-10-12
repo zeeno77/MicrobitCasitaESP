@@ -1,15 +1,16 @@
-let temperatura = 0
 let humedad = 0
+let temperatura = 0
 let errorMsj = "Error"
-let basicPause = 3000
+let basicPause = 5000
 let configTries = 10
-let nerworkName = "arrakis"
-let networkPassword = "thespicemustflow"
-let serverURL = "http://192.168.88.53:8000/muestra/"
+let nerworkName = "RedSensores"
+let networkPassword = "Alf20202022"
+let serverURL = "http://192.168.0.101:8000/muestra/"
 let configTimeout = custom.setupESP(nerworkName, networkPassword, serverURL)
 basic.pause(basicPause)
 basic.clearScreen()
 basic.forever(function () {
+    // }
     if (configTimeout < configTries) {
         dht11_dht22.queryData(
         DHTtype.DHT11,
