@@ -30,8 +30,6 @@ basic.forever(function on_forever() {
         basic.pause(basicPause)
         if (pins.digitalReadPin(DigitalPin.P4) == 0) {
             custom.sendData("Casita", "Gas", "Gas detectado")
-        } else {
-            custom.sendData("Casita", "Gas", "Gas no detectado")
         }
         
     } else {

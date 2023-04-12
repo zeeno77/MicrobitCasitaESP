@@ -25,8 +25,6 @@ def on_forever():
         basic.pause(basicPause)
         if pins.digital_read_pin(DigitalPin.P4) == 0:
             custom.send_data("Casita", "Gas", "Gas detectado")
-        else:
-            custom.send_data("Casita", "Gas", "Gas no detectado")
     else:
         serial.write_string(errorMsj)
         basic.show_string(errorMsj)
