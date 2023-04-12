@@ -37,6 +37,10 @@ if (configTimeout < configTries) {
         }
         basic.pause(basicPause)
         custom.sendData("Casita", "Agua", "" + pins.analogReadPin(AnalogPin.P10))
+        basic.pause(basicPause)
+        if (pins.digitalReadPin(DigitalPin.P13) == 1) {
+            custom.sendData("Casita", "Movimiento", "Movimiento detectado")
+        }
     } else {
         serial.writeString(errorMsj)
         basic.showString(errorMsj)
