@@ -16,15 +16,17 @@ def on_forever():
         dht11_dht22.query_data(DHTtype.DHT11, DigitalPin.P2, True, False, True)
         basic.pause(basicPause)
         temperatura = dht11_dht22.read_data(dataType.TEMPERATURE)
-        if temperatura != -999:
+        if (temperatura != -999):
             custom.send_data("Casita", "Temperatura", "" + str(temperatura))
         basic.pause(basicPause)
         humedad = dht11_dht22.read_data(dataType.HUMIDITY)
-        if humedad != -999:
+        if (humedad != -999):
             custom.send_data("Casita", "Humedad", "" + str(humedad))
         basic.pause(basicPause)
-        if pins.digital_read_pin(DigitalPin.P4) == 0:
+        if pins.digital_read_pin(DigitalPin.P3) == 0:
             custom.send_data("Casita", "Gas", "Gas detectado")
+        basic.pause(basicPause)
+        #custom.send_data("Casita", "Agua", )
     else:
         serial.write_string(errorMsj)
         basic.show_string(errorMsj)

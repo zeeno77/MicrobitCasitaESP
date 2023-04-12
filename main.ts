@@ -28,11 +28,13 @@ basic.forever(function on_forever() {
         }
         
         basic.pause(basicPause)
-        if (pins.digitalReadPin(DigitalPin.P4) == 0) {
+        if (pins.digitalReadPin(DigitalPin.P3) == 0) {
             custom.sendData("Casita", "Gas", "Gas detectado")
         }
         
+        basic.pause(basicPause)
     } else {
+        // custom.send_data("Casita", "Agua", )
         serial.writeString(errorMsj)
         basic.showString(errorMsj)
         basic.pause(basicPause)
